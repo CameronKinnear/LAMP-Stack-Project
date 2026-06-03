@@ -1,25 +1,52 @@
 <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>LAMP Contacts Manager</title>
+    <link rel="stylesheet" href="css/style.css">
+    <script src="js/code.js" defer></script>
+</head>
+<body>
+    <main class="auth-container">
+        <h1>LAMP Contacts Manager</h1>
 
-<html>
-    <head>
-        <meta charset="UTF-8">
-        <title>LAMP Contacts</title>
-        <link rel="stylesheet", href="/css/style.css">
-        <script src="js/code.js"></script>
-    </head>
-    <body>
-        <div class="page-title">
-            <h1>LAMP Contacts Manager</h1>
-        </div>
-        <div class="login">
-            <label for="username">Username</label>
-            <input type="text", placeholder="Enter username", id="user">
-            <br>
-            <label for="password">Password</label>
-            <input type="password", placeholder="Enter password", id="pass">
-            <br>
-            <button onclick="TryLogin();">Login</button>
-            <p id="login-status"></p>
-        </div>
-    </body>
+        <section class="card">
+            <h2>Login</h2>
+
+            <form id="login-form">
+                <label for="login-username">Username</label>
+                <input type="text" id="login-username" autocomplete="username" required>
+
+                <label for="login-password">Password</label>
+                <input type="password" id="login-password" autocomplete="current-password" required>
+
+                <button type="submit">Login</button>
+            </form>
+
+            <p id="login-status" class="status-message"></p>
+        </section>
+
+        <section class="card">
+            <h2>Register</h2>
+
+            <form id="register-form">
+                <label for="register-first-name">First Name</label>
+                <input type="text" id="register-first-name" required>
+
+                <label for="register-last-name">Last Name</label>
+                <input type="text" id="register-last-name" required>
+
+                <label for="register-username">Username</label>
+                <input type="text" id="register-username" autocomplete="username" required>
+
+                <label for="register-password">Password</label>
+                <input type="password" id="register-password" autocomplete="new-password" required>
+
+                <button type="submit">Create Account</button>
+            </form>
+
+            <p id="register-status" class="status-message"></p>
+        </section>
+    </main>
+</body>
 </html>
