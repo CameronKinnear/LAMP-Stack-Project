@@ -5,6 +5,7 @@
         <meta charset="UTF-8">
         <title>LAMP Contacts</title>
         <link rel="stylesheet", href="/css/style.css">
+        <script src="js/code.js"></script>
     </head>
     <body>
         <div class="page-title">
@@ -14,10 +15,11 @@
             <label for="username">Username</label>
             <input type="text", placeholder="Enter username">
             <br>
-            <label for="Password">Password</label>
+            <label for="password">Password</label>
             <input type="password", placeholder="Enter password">
             <br>
-            <button onclick="doSomething();">Login</button>
+            <button onclick="TryPassword();">Login</button>
+            <p id="login-status", style="color: red"></p>
         </div>
     </body>
 </html>
