@@ -1,43 +1,63 @@
 <?php
-// allows any origin to access this API (prevents CORS policy errors)
-header("Access-Control-Allow-Origin: *"); // although a temporary wildcard (*), this is subject to change with an actual domain
+header("Access-Control-Allow-Origin: *");
 header("Access-Control-Allow-Headers: Content-Type, Access-Control-Allow-Headers, Authorization, X-Requested-With");
 header("Access-Control-Allow-Methods: POST, OPTIONS");
 header("Content-Type: application/json; charset=UTF-8");
 
-// handles the browser's hidden OPTIONS request
 if ($_SERVER['REQUEST_METHOD'] === 'OPTIONS') {
-    // exit immediately with a 200 OK status so the browser proceeds to the real POST request
     http_response_code(200);
     exit();
-	
-// reads the raw incoming JSON data
+}
+
+require_once __DIR__ . "/db.php";
+
 $jsonInput = file_get_contents('php://input');
 $requestData = json_decode($jsonInput, true);
 
-// extracts login data requested by the client
-$login = $requestData['login'] ?? '';
+$login = trim($requestData['login'] ?? '');
 $password = $requestData['password'] ?? '';
 
-// -- [DATABASE LOGIC WILL GO HERE] --
-
-// (temporary code block) fake login to test endpoint structure
-if ($login === "username123" && $password === "password123") {
-    // successful login response
-    $response = array(
-        "id" => 42,
-        "firstName" => "John",
-        "lastName" => "Doe",
-        "error" => ""
-    );
-} else {
-    // failed login response
-    $response = array(
+if ($login === '' || $password === '') {
+    echo json_encode([
         "id" => 0,
-        "error" => "No Records Found"
-    );
+        "firstName" => "",
+        "lastName" => "",
+        "error" => "Login and password are required"
+    ]);
+    exit();
 }
 
-// sends the JSON response back to the client (to Postman)
-echo json_encode($response);
+$stmt = $conn->prepare("SELECT ID, FirstName, LastName, Password FROM Users WHERE Login = ?");
+$stmt->bind_param("s", $login);
+$stmt->execute();
+
+$result = $stmt->get_result();
+
+if ($row = $result->fetch_assoc()) {
+    if (password_verify($password, $row["Password"])) {
+        echo json_encode([
+            "id" => intval($row["ID"]),
+            "firstName" => $row["FirstName"],
+            "lastName" => $row["LastName"],
+            "error" => ""
+        ]);
+    } else {
+        echo json_encode([
+            "id" => 0,
+            "firstName" => "",
+            "lastName" => "",
+            "error" => "Invalid username or password"
+        ]);
+    }
+} else {
+    echo json_encode([
+        "id" => 0,
+        "firstName" => "",
+        "lastName" => "",
+        "error" => "No Records Found"
+    ]);
+}
+
+$stmt->close();
+$conn->close();
 ?>

@@ -1,46 +1,66 @@
 <?php
-// allows any origin to access this API (prevents CORS policy errors)
-header("Access-Control-Allow-Origin: *"); // although a temporary wildcard (*), this is subject to change with an actual domain
+header("Access-Control-Allow-Origin: *");
 header("Access-Control-Allow-Headers: Content-Type, Access-Control-Allow-Headers, Authorization, X-Requested-With");
 header("Access-Control-Allow-Methods: POST, OPTIONS");
 header("Content-Type: application/json; charset=UTF-8");
 
-// handles the browser's hidden OPTIONS request
 if ($_SERVER['REQUEST_METHOD'] === 'OPTIONS') {
-    // exit immediately with a 200 OK status so the browser proceeds to the real POST request
     http_response_code(200);
     exit();
+}
 
-// reads the raw incoming JSON data
+require_once __DIR__ . "/db.php";
+
 $jsonInput = file_get_contents('php://input');
 $requestData = json_decode($jsonInput, true);
 
-// extracts data requested by the client
-$userId = $requestData['userId'] ?? 0;
-$search = $requestData['search'] ?? '';
+$userId = intval($requestData['userId'] ?? 0);
+$search = trim($requestData['search'] ?? '');
 
-// -- [DATABASE LOGIC WILL GO HERE] --
-
-// (temporary code block) fake a matching search result array to test your front-end rendering later
-if ($userId > 0) {
-    $response = array(
-        "results" => array(
-            array(
-                "id" => 101,
-                "firstName" => "John",
-                "lastName" => "Doe",
-                "phone" => "407-313-0124",
-                "email" => "johndoe@example.com"
-            )
-        ),
-        "error" => ""
-    );
-} else {
-    $response = array(
-        "results" => array(),
-        "error" => "Invalid user session."
-    );
+if ($userId <= 0) {
+    echo json_encode([
+        "results" => [],
+        "error" => "Valid userId is required"
+    ]);
+    exit();
 }
-// sends the JSON response back to the client (to Postman)
-echo json_encode($response);
+
+$likeSearch = "%" . $search . "%";
+
+$stmt = $conn->prepare(
+    "SELECT ID, FirstName, LastName, Phone, Email
+     FROM Contacts
+     WHERE UserID = ?
+       AND (
+            FirstName LIKE ?
+         OR LastName LIKE ?
+         OR Phone LIKE ?
+         OR Email LIKE ?
+       )
+     ORDER BY LastName ASC, FirstName ASC"
+);
+
+$stmt->bind_param("issss", $userId, $likeSearch, $likeSearch, $likeSearch, $likeSearch);
+$stmt->execute();
+
+$result = $stmt->get_result();
+$contacts = [];
+
+while ($row = $result->fetch_assoc()) {
+    $contacts[] = [
+        "id" => intval($row["ID"]),
+        "firstName" => $row["FirstName"],
+        "lastName" => $row["LastName"],
+        "phone" => $row["Phone"],
+        "email" => $row["Email"]
+    ];
+}
+
+echo json_encode([
+    "results" => $contacts,
+    "error" => ""
+]);
+
+$stmt->close();
+$conn->close();
 ?>
