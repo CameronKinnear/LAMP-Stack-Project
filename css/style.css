@@ -1,164 +1,153 @@
-* {
-    box-sizing: border-box;
+body{
+  background-image: url("NEUMORPHIC_CIRCLES_BACKGROUND.jpg");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  font-family: 'Garamond', serif;
+  position: relative;
 }
 
-body {
-    margin: 0;
-    font-family: Arial, Helvetica, sans-serif;
-    background: #f3f4f6;
-    color: #1f2937;
+.Welcome{
+  border: 1px solid #232232;
+  padding: 13px;
+  margin: auto;
+  border-radius: 8px;
+  width: 30rem;
+  background-color: #34354A;
+  box-sizing: border-box;
+  box-shadow: 0 0 15px 15px rgba(0, 0, 0, .4);
+  color: #FFFDD0;
+  text-align: center;
+  vertical-align: middle;
+  font-size: 5rem;
+  font-weight: bolder;
+  margin-top: 2vw;
+  margin-bottom: 0;
 }
 
-h1,
-h2 {
-    margin-top: 0;
+.pleaseLogin{
+  color: #FFFDD0;
+  text-align: center;
+  vertical-align: middle;
+  font-size: 2rem;
+  font-weight: bolder;
+  margin-top: 0;
+  margin-bottom: 6vw;
 }
 
-.auth-container,
-.app-container {
-    width: min(1100px, 92vw);
-    margin: 32px auto;
+.card{
+  max-width: 50rem;
+  height: 100%;
+  margin: auto;
+  border-radius: 30px;
+  padding: 2rem;
+  background-color: #34354A;
+  box-shadow: 0 0 15px 15px rgba(0, 0, 0, .4);
 }
 
-.auth-container {
-    max-width: 520px;
+label{
+  margin-left: 2vw;
+  margin-bottom: 5vw;
+  color: #FFFDD0;
+  font-size: 1.5rem;
+  font-weight: bold;
 }
 
-.card {
-    background: white;
-    border: 1px solid #d1d5db;
-    border-radius: 10px;
-    padding: 20px;
-    margin-bottom: 20px;
-    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
+input[type=text], input[type=password]{
+  display: block;
+  background-color: #FFFDD0;
+  margin: 1vw auto 1vw auto;
+  width: 95%;
+  height: 3rem;
+  padding: 5px;
+  border-radius: 30px;
+  box-sizing: border-box;
+  border: 1px solid black;
+  font-size: large;
 }
 
-.app-header {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    gap: 16px;
-    margin-bottom: 20px;
+::placeholder{
+  color: #4A3E34;
+  opacity: 50%;
+  font-weight: bold;
+  padding-left: 1rem;
 }
 
-label {
-    display: block;
-    font-weight: 700;
-    margin-top: 12px;
-    margin-bottom: 6px;
+button[type=submit] {
+  display: block;
+  cursor: pointer;
+  margin: auto;
+  width: 20%;
+  height: 3rem;
+  padding: 5px;
+  border-radius: 20px;
+  box-sizing: border-box;
+  border: 1px solid #232232;
+  background-color: #4A3E34;
+  font-size: x-large;
+  font-weight: bold;
+  color: #FFFDD0;
 }
 
-input {
-    width: 100%;
-    padding: 10px;
-    border: 1px solid #9ca3af;
-    border-radius: 6px;
-    font-size: 1rem;
+button[type=submit]:hover{
+  background-color: #232232;
 }
 
-button {
-    margin-top: 14px;
-    padding: 10px 16px;
-    border: none;
-    border-radius: 6px;
-    background: #2563eb;
-    color: white;
-    font-weight: 700;
-    cursor: pointer;
+button[type=submit]:active{
+  background-color: #232232;
+  box-shadow: 0 5px #000000;
+  transform: translateY(4px)
 }
 
-button:hover {
-    background: #1d4ed8;
+.status-message.error{
+  display: block;
+  margin: auto;
+  margin-top: 2rem;
+  text-align: center;
+  max-width: 25rem;
+  font-size: x-large;
+  color: red;
+  background: #FFFDD0;
+  border-radius: 0;
+  box-sizing: border-box;
 }
 
-.secondary-button {
-    background: #6b7280;
+.centerLink{
+  text-align: center;
 }
 
-.secondary-button:hover {
-    background: #4b5563;
+.DontHaveAccount{
+  text-align: center;
+  color: #FFFDD0;
+  font-size: x-large
+}
+.create{
+  text-decoration: none;
+  display: block;
+  cursor: pointer;
+  margin: auto;
+  width: 20%;
+  height: 3rem;
+  padding: 5px;
+  border-radius: 20px;
+  box-sizing: border-box;
+  border: 1px solid #232232;
+  background-color: #FFFDD0;
+  font-size: x-large;
+  font-weight: bold;
+  color: #4A3E34;
 }
 
-.danger-button {
-    background: #dc2626;
+.create:hover{
+  background-color: #a39f8f;
+}
+.create:active{
+  background-color: #232232;
+  box-shadow: 0 5px #000000;
+  transform: translateY(4px)
 }
 
-.danger-button:hover {
-    background: #b91c1c;
-}
-
-.small-button {
-    padding: 6px 10px;
-    margin: 0 4px 0 0;
-    font-size: 0.9rem;
-}
-
-.inline-form {
-    display: flex;
-    gap: 10px;
-    align-items: center;
-}
-
-.inline-form input {
-    flex: 1;
-}
-
-.inline-form button {
-    margin-top: 0;
-}
-
-.button-row {
-    display: flex;
-    gap: 10px;
-    align-items: center;
-}
-
-#cancel-edit-button {
+.register-card {
     display: none;
 }
 
-.status-message {
-    min-height: 22px;
-    font-weight: 700;
-}
-
-.status-message.error {
-    color: #b91c1c;
-}
-
-.status-message.success {
-    color: #047857;
-}
-
-.table-wrapper {
-    overflow-x: auto;
-}
-
-table {
-    width: 100%;
-    border-collapse: collapse;
-}
-
-th,
-td {
-    border-bottom: 1px solid #d1d5db;
-    padding: 10px;
-    text-align: left;
-}
-
-th {
-    background: #f9fafb;
-}
-
-@media (max-width: 700px) {
-    .inline-form,
-    .button-row,
-    .app-header {
-        flex-direction: column;
-        align-items: stretch;
-    }
-
-    .inline-form button {
-        margin-top: 0;
-    }
-}
