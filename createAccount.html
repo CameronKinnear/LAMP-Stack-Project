@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Create Account</title>
+    <link rel="stylesheet" href="css/createAccount.css">
+    <script src="js/code.js" defer></script>
+</head>
+<body>
+
+    <div class = "Create"> Create Account </div>
+
+    <div class = "Container">
+        <form id = "register-form" method = "POST">
+            <label for = "register-first-name">First Name</label>
+            <input type = "text" id = "register-first-name" placeholder = "First Name" required>
+            
+            <label for = "register-last-name">Last Name</label>    
+            <input type = "text" id = "register-last-name" placeholder = "Last Name" required>
+            
+            <label for = "register-username">Username</label>
+            <input type = "text" id = "register-username" placeholder = "Username" required>
+            
+            <label for = "register-password">Password</label>
+            <input type = "password" id = "register-password" placeholder = "Password" required>
+            
+            <label for= "confirmPass">Confirm Password</label>
+            <input type = "password" id = "confirmPass" class = "fullBar" placeholder = "Confirm Password" required>
+            <button type="submit">Create Account</button>
+        </form>
+        <p id="register-status" class="status-message"></p>
+        <div id = "registerError"></div>
+    </div>
+</body>
+</html>
