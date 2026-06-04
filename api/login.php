@@ -12,7 +12,12 @@ $dbname = "LampContactsManager";
 $conn = new mysqli($servername, $username, $password, $dbname);
 
 if ($conn->connect_error) {
-    die("Connection failed: " . $conn->connect_error);
+    http_response_code(500);
+    echo json_encode([
+        "id" => 0,
+        "error" => "Database connection failed"
+    ]);
+    exit();
 }
 echo "Connected successfully";
 
