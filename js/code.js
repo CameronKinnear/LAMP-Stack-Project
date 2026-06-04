@@ -103,6 +103,8 @@ async function handleRegister(event) {
     registerStatus.classList.add("success");
 
     document.getElementById("register-form").reset();
+
+    location.window.href = "index.html"
 }
 
 function handleLogout() {
