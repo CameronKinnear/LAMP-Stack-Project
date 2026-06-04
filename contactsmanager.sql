@@ -23,4 +23,4 @@ CREATE TABLE Contacts (
 );
 
 CREATE USER 'DbEditor' identified by 'Lampgroup10';
-GRANT ALL PRIVILEDGES ON contactsmanager.* to 'DbEditor'@'%';
+GRANT ALL PRIVILEGES ON contactsmanager.* to 'DbEditor'@'%';
