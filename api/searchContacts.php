@@ -31,7 +31,7 @@ if ($userId <= 0) {
 $likeSearch = "%" . $search . "%";
 
 $stmt = $conn->prepare(
-    "SELECT ID, FirstName, LastName, Phone, Email
+    "SELECT ContactID, FirstName, LastName, Phone, Email
      FROM Contacts
      WHERE UserID = ?
        AND (

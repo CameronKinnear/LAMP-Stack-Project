@@ -29,7 +29,7 @@ if ($userId <= 0 || $contactId <= 0) {
 
 $stmt = $conn->prepare(
     "DELETE FROM Contacts
-     WHERE ID = ? AND UserID = ?"
+     WHERE ContactID = ? AND UserID = ?"
 );
 
 $stmt->bind_param("ii", $contactId, $userId);

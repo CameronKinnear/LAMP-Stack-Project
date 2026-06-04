@@ -50,7 +50,7 @@ if ($email !== '' && !filter_var($email, FILTER_VALIDATE_EMAIL)) {
 $stmt = $conn->prepare(
     "UPDATE Contacts
      SET FirstName = ?, LastName = ?, Phone = ?, Email = ?
-     WHERE ID = ? AND UserID = ?"
+     WHERE ContactID = ? AND UserID = ?"
 );
 
 $stmt->bind_param("ssssii", $firstName, $lastName, $phone, $email, $contactId, $userId);
