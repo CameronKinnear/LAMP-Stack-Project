@@ -48,7 +48,7 @@ $contacts = [];
 
 while ($row = $result->fetch_assoc()) {
     $contacts[] = [
-        "id" => intval($row["ID"]),
+        "id" => intval($row["ContactID"]),
         "firstName" => $row["FirstName"],
         "lastName" => $row["LastName"],
         "phone" => $row["Phone"],
