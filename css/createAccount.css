@@ -10,6 +10,7 @@ body{
   width: 500px;
   height: 60px;
   margin: auto;
+  border-radius: 20px 20px 0 0;
   background-color: #34354A;
   box-shadow: 0 0 15px 15px rgba(0, 0, 0, .4);
   color: #FFFDD0;
@@ -23,8 +24,9 @@ body{
 
 .Container{
   width: 500px;
-  height: 650px;
+  height: 600px;
   margin: auto;
+  border-radius: 0 0 20px 20px;
   background-color:#FFFDD0 ;
   box-shadow: 0 0 15px 15px rgba(0, 0, 0, .4);
   color: #FFFDD0;
