@@ -1,4 +1,4 @@
-CREATE DATABASE contactsmanager;
+CREATE DATABASE IF NOT EXISTS contactsmanager;
 USE contactsmanager;
 
 CREATE TABLE Users (
@@ -11,7 +11,7 @@ CREATE TABLE Users (
 
 CREATE TABLE Contacts (
     ContactID INT AUTO_INCREMENT PRIMARY KEY,
-    UserID INT,
+    UserID INT NOT NULL,
     FirstName VARCHAR(50) NOT NULL,
     LastName VARCHAR(50) NOT NULL,
     Phone VARCHAR(20),
@@ -22,5 +22,10 @@ CREATE TABLE Contacts (
     ON DELETE CASCADE
 );
 
-CREATE USER 'DbEditor' identified by 'Lampgroup10';
-GRANT ALL PRIVILEGES ON contactsmanager.* to 'DbEditor'@'%';
+-- Database users and passwords should not be committed to GitHub.
+-- Each deployment should create its own database user privately.
+--
+-- Example only:
+-- CREATE USER 'your_database_user'@'localhost' IDENTIFIED BY 'your_strong_password';
+-- GRANT ALL PRIVILEGES ON contactsmanager.* TO 'your_database_user'@'localhost';
+-- FLUSH PRIVILEGES;
