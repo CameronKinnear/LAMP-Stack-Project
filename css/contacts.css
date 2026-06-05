@@ -13,7 +13,7 @@ header {
 }
   
 h1 {
-    width: 60rem;
+    width: auto;
     color: #FFFDD0;
     vertical-align: middle;
     font-size: 4rem;
@@ -21,11 +21,13 @@ h1 {
     margin-top: 2vw;
     margin-bottom: 0;
     white-space: nowrap;
+    text-align: center;
 }
   
 .welcome-message {
     color: #FFFFFF;
     font-size: 20px;
+    text-align: center;
 }
 
 .table-wrapper {
@@ -37,5 +39,26 @@ th, td {
 }
   
 h2 {
-    color: #FFFFFF; 
+    color: #FFFFFF;
+    margin-left: 30px;
+}
+
+.logout[type=button] {
+    display: block;
+      cursor: pointer;
+      margin: auto;
+      width: 20%;
+      height: 3rem;
+      padding: 5px;
+      border-radius: 20px;
+      box-sizing: border-box;
+      border: 1px solid #232232;
+      background-color: #4A3E34;
+      font-size: x-large;
+      font-weight: bold;
+      color: #FFFDD0;
+}
+
+.logout:hover {
+    background-color: #232232
 }
