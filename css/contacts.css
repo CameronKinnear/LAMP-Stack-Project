@@ -65,7 +65,7 @@ button[type=button] {
     display: block;
     cursor: pointer;
     margin: auto;
-    width: 20%;
+    width: auto;
     height: 3rem;
     padding: 5px;
     border-radius: 20px;
