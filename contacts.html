@@ -3,55 +3,36 @@
 <head>
     <meta charset="UTF-8">
     <title>Contacts Dashboard</title>
-    <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="css/contacts.css">
     <script src="js/code.js" defer></script>
 </head>
 <body>
     <main class="app-container">
-        <section class="card">
-            <header class="app-header">
-                <div>
-                    <h1>Contacts Dashboard</h1>
-                    <p id="welcome-message" class="welcome-message">Signed in</p>
-                </div>
+        <header class="app-header">
+            <div class = "Dashboard"> Contacts Dashboard</div>
+            <p id="welcome-message">Signed in</p>
+            
 
-                <button id="logout-button" type="button" class="logout">Logout</button>
-            </header>
+            <button id="logout-button" type="button">Logout</button>
+        </header>
 
-        
-            <h2>Search Contacts</h2>
+            <div class = "Search">Search Contacts</div>
 
+            <div class = "Container">
+            <section class="card">
             <form id="search-form" class="inline-form">
                 <input type="text" id="search-input" placeholder="Search by name, phone, or email">
-                <div class="button-row">
-                    <button type="submit">Search</button>
-                    <button type="button" id="show-all-button">Show All</button>
+                <div class = "Search-button">
+                <button type="submit">Search</button>
+                <button type="button" id="show-all-button">Show All</button>
                 </div>
             </form>
 
             <p id="search-status" class="status-message"></p>
-
-            <div class="table-wrapper">
-                <table>
-                    <thead>
-                        <tr>
-                            <th>Name</th>
-                            <th>Phone</th>
-                            <th>Email</th>
-                            <th>Actions</th>
-                        </tr>
-                    </thead>
-                    <tbody id="contacts-table-body">
-                        <tr class="table-row">
-                            <td colspan="4">No contacts loaded yet.</td>
-                        </tr>
-                    </tbody>
-                </table>
-            </div>
         </section>
 
         <section class="card">
+
             <h2 id="contact-form-title">Add Contact</h2>
 
             <form id="contact-form">
@@ -76,6 +57,28 @@
             </form>
 
             <p id="contact-status" class="status-message"></p>
+        </section>
+
+        <section class="card">
+            <div class = "Results">Contact Results</div>
+
+            <div class="table-wrapper">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Name</th>
+                            <th>Phone</th>
+                            <th>Email</th>
+                            <th>Actions</th>
+                        </tr>
+                    </thead>
+                    <tbody id="contacts-table-body">
+                        <tr>
+                            <td colspan="4">No contacts loaded yet.</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
         </section>
     </main>
 </body>
