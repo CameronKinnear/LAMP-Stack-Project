@@ -54,6 +54,8 @@ label{
   color: #4A3E34;
   font-size: 1rem;
   font-weight: bold;
+  margin-left: 20px;
+  transform: translateY(15px);
 }
 
 button[type=submit] {
@@ -70,6 +72,7 @@ button[type=submit] {
   font-size: x-large;
   font-weight: bold;
   color: #FFFDD0;
+  margin-top: 40px;
 }
 
 button[type=submit]:hover{
@@ -95,7 +98,10 @@ button[type=submit]:active{
   box-sizing: border-box;
 }
 
-label {
-  margin-left: 20px;
-  transform: translateY(15px);
+.pass-warning {
+  position: absolute;
+  color: #4A3E34;
+  font-size: 15px;
+  margin-left: 155px;
+  transform: translateY(-30px);
 }

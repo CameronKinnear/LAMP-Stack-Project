@@ -1,5 +1,5 @@
 body{
-  background-image: url("NEUMORPHIC_CIRCLES_BACKGROUND.jpg");
+  background-image: url("../images/NEUMORPHIC_CIRCLES_BACKGROUND.jpg");
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
@@ -12,7 +12,7 @@ body{
   padding: 13px;
   margin: auto;
   border-radius: 8px;
-  width: 30rem;
+  width: 60rem;
   background-color: #34354A;
   box-sizing: border-box;
   box-shadow: 0 0 15px 15px rgba(0, 0, 0, .4);
@@ -23,15 +23,16 @@ body{
   font-weight: bolder;
   margin-top: 2vw;
   margin-bottom: 0;
+  white-space: nowrap;
 }
 
 .pleaseLogin{
-  color: #FFFDD0;
+  color: #ffffff;
   text-align: center;
   vertical-align: middle;
   font-size: 2rem;
   font-weight: bolder;
-  margin-top: 0;
+  margin-top: 20px;
   margin-bottom: 6vw;
 }
 
@@ -118,7 +119,7 @@ button[type=submit]:active{
 
 .DontHaveAccount{
   text-align: center;
-  color: #FFFDD0;
+  color: #ffffff;
   font-size: x-large
 }
 .create{
@@ -133,9 +134,11 @@ button[type=submit]:active{
   box-sizing: border-box;
   border: 1px solid #232232;
   background-color: #FFFDD0;
-  font-size: x-large;
+  font-size: 30px;
   font-weight: bold;
   color: #4A3E34;
+  text-align: center;
+  box-shadow: 0 0 15px 15px rgba(0, 0, 0, .4);
 }
 
 .create:hover{
