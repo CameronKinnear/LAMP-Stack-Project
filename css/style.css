@@ -54,7 +54,7 @@ label{
   font-weight: bold;
 }
 
-input[type=text], input[type=password]{
+input[type=text], input[type=password], input[type=email] {
   display: block;
   background-color: #FFFDD0;
   margin: 1vw auto 1vw auto;
