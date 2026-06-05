@@ -113,6 +113,10 @@ button[type=submit]:active{
   box-sizing: border-box;
 }
 
+.status-message {
+  color: white;
+}
+
 .centerLink{
   text-align: center;
 }
