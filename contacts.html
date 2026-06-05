@@ -9,29 +9,28 @@
 </head>
 <body>
     <main class="app-container">
-        <header class="app-header">
-            <div>
-                <h1>Contacts Dashboard</h1>
-                <p id="welcome-message" class="welcome-message">Signed in</p>
-            </div>
-
-            <button id="logout-button" type="button" class="logout">Logout</button>
-        </header>
-
         <section class="card">
+            <header class="app-header">
+                <div>
+                    <h1>Contacts Dashboard</h1>
+                    <p id="welcome-message" class="welcome-message">Signed in</p>
+                </div>
+
+                <button id="logout-button" type="button" class="logout">Logout</button>
+            </header>
+
+        
             <h2>Search Contacts</h2>
 
             <form id="search-form" class="inline-form">
                 <input type="text" id="search-input" placeholder="Search by name, phone, or email">
-                <button type="submit">Search</button>
-                <button type="button" id="show-all-button">Show All</button>
+                <div class="button-row">
+                    <button type="submit">Search</button>
+                    <button type="button" id="show-all-button">Show All</button>
+                </div>
             </form>
 
             <p id="search-status" class="status-message"></p>
-        </section>
-
-        <section class="card">
-            <h2>Contact Results</h2>
 
             <div class="table-wrapper">
                 <table>
