@@ -1,116 +1,219 @@
-.card {
-    margin-top: 50px;
+body{
+  background-image: url("../images/NEUMORPHIC_CIRCLES_BACKGROUND.jpg");
+  background-position: center;
+  background-repeat: no-repeat;
+  font-family: 'Georgia', serif;
+  position: relative;
 }
-  
-h1 {
-    width: auto;
-    color: #FFFDD0;
-    vertical-align: middle;
-    font-size: 4rem;
-    font-weight: bolder;
-    margin-top: 2vw;
-    margin-bottom: 0;
-    white-space: nowrap;
+
+.Dashboard{
+  width: 98vw;
+  height: 60px;
+  margin: auto;
+  background-color: #34354A;
+  box-shadow: 0 0 15px 15px rgba(0, 0, 0, .4);
+  color: #FFFDD0;
+  text-align: center;
+  vertical-align: middle;
+  font-size: 3rem;
+  margin-top: 2vw;
+  margin-bottom: 0;
+}
+
+#welcome-message{
     text-align: center;
-}
-  
-.welcome-message {
-    color: #FFFFFF;
-    font-size: 20px;
-    text-align: center;
-}
-
-table {
-    color: #FFFFFF;
-    margin-left: auto;
-    margin-right: auto;
-    width: 80%;
-    text-align: center;
-}
-  
-th, td {
-    padding: 20px; 
-}
-  
-h2 {
-    color: #FFFFFF;
-    margin-left: 30px;
-}
-
-.logout[type=button] {
-    display: block;
-      cursor: pointer;
-      margin: auto;
-      width: 20%;
-      height: 3rem;
-      padding: 5px;
-      border-radius: 20px;
-      box-sizing: border-box;
-      border: 1px solid #232232;
-      background-color: #4A3E34;
-      font-size: x-large;
-      font-weight: bold;
-      color: #FFFDD0;
-}
-
-.logout:hover {
-    background-color: #232232
-}
-
-.save-contact-button {
-    width: 20%;
-}
-
-button[type=button] {
-    display: block;
-    cursor: pointer;
+    text-decoration:underline;
+    border-radius: 15px;
+    color: #232232;
     margin: auto;
-    width: auto;
-    height: 3rem;
-    padding: 5px;
+    margin-top: 1rem;
+    width:250px;
+    height:25px;
+    background-color:#FFFDD0;
+    box-shadow: 0 0 15px 15px rgba(0, 0, 0, .4);
+}
+
+#logout-button{
+  display: block;
+  cursor: pointer;
+  margin: auto;
+  margin-top: .75rem;
+  width: 10%;
+  height: 3rem;
+  padding: 5px;
+  border-radius: 20px;
+  box-sizing: border-box;
+  border: 1px solid #232232;
+  background-color: #4A3E34;
+  font-size: x-large;
+  font-weight: bold;
+  color: #FFFDD0;
+}
+
+#logout-button:hover{
+  background-color: #34354A;
+}
+
+#logout-button:active{
+  background-color: #34354A;
+  box-shadow: 0 5px #000000;
+  transform: translateY(4px)
+}
+
+.Search{
+  width: 700px;
+  height: 50px;
+  margin: auto;
+  border-radius: 20px 20px 0px 0px;
+  background-color: #FFFDD0;
+  box-shadow: 0px 0px 0px 0px rgba(0, 0, 0, .4);
+  color: #4A3E34;
+  text-align: center;
+  vertical-align: middle;
+  font-size: 2.5rem;
+  margin-top: 2vw;
+}
+
+.Container{
+  width: 700px;
+  height: 200px;
+  margin: auto;
+  margin-bottom: 20px;
+  border-radius: 0 0 20px 20px;
+  background-color:#34354A;
+  box-shadow: 15px 15px 0px 0px rgba(0, 0, 0, .4);
+  color: #FFFDD0;
+  text-align: left;
+}
+
+label{
+  display: block;
+  margin-top:10px;
+  background: none;
+  padding: 0;
+  border:none;
+  color: #FFFDD0;
+  font-size: 1rem;
+  font-weight: bold;
+}
+
+input[type=text], input[type=password], input[type = email]{
+  display: block;
+  background-color: #FFFDD0;
+  margin: 1vw auto 1vw auto;
+  margin-top: 5px;
+  width: 80%;
+  height: 2.3rem;
+  padding: 1px;
+  border-radius: 30px;
+  box-sizing: border-box;
+  border: 1px solid black;
+  font-size: large;
+}
+
+.Search-button {
+  display: flex;
+  gap: 12px;
+}
+
+.Search-button button{
+    padding: 9px 19px;
     border-radius: 20px;
-    box-sizing: border-box;
     border: 1px solid #232232;
     background-color: #4A3E34;
-    font-size: x-large;
+    font-size: 1rem;
     font-weight: bold;
     color: #FFFDD0;
+    cursor: pointer;
+    margin:auto;
+}
+.Search-button button:hover{
+  background-color: #232232;
 }
 
-.button-row {
-    display: flex;
+.Search-button button:active{
+  background-color: #232232;
+  box-shadow: 0 5px #000000;
+  transform: translateY(4px)
 }
 
-.secondary-button {
-    display: none;
+#contact-form-title{
+  width: 700px;
+  height: 50px;
+  margin: auto;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  border-radius: 20px 20px 0px 0px;
+  background-color: #FFFDD0;
+  box-shadow: 0px 0px 0px 0px rgba(0, 0, 0, .4);
+  color: #4A3E34;
+  text-align: center;
+  vertical-align: middle;
+  font-size: 2.3rem;
+  margin-top: 2vw;
 }
 
-.contact-results {
-    margin-top: 50px;
-    text-align: center;
+#contact-form{
+  width: 700px;
+  height: 375px;
+  margin: auto;
+  margin-bottom: 10px;
+  border-radius: 0 0 20px 20px;
+  background-color:#34354A;
+  box-shadow: 15px 15px 0px 0px rgba(0, 0, 0, .4);
+  color: #FFFDD0;
+  text-align: left;
 }
 
-.small-button {
-    width: 50%;
-    height: 20%;
+.button-row{
+  display: flex;
+  gap: 12px;
 }
 
-.status-message {
-    color: #FFFFFF;
-    text-align: center;
+.button-row button{
+    padding: 9px 19px;
+    border-radius: 20px;
+    border: 1px solid #232232;
+    background-color: #4A3E34;
+    font-size: 1rem;
+    font-weight: bold;
+    color: #FFFDD0;
+    cursor: pointer;
+    margin:auto;
 }
 
-.tr {
-    display: block;
-    background-color: #FFFDD0;
-    color: #232232;
-    margin: 1vw auto 1vw auto;
-    width: 95%;
-    height: 3rem;
-    padding: 5px;
-    border-radius: 30px;
-    box-sizing: border-box;
-    border: 1px solid black;
-    font-size: large;
-    padding-left: 15px;
+.button-row button:hover{
+  background-color: #232232;
 }
+
+.button-row button:active{
+  background-color: #232232;
+  box-shadow: 0 5px #000000;
+  transform: translateY(4px)
+}
+
+.Results{
+  width: 700px;
+  height: 50px;
+  margin: auto;
+  border-radius: 20px 20px 0px 0px;
+  background-color: #FFFDD0;
+  box-shadow: 0px 0px 0px 0px rgba(0, 0, 0, .4);
+  color: #4A3E34;
+  text-align: center;
+  vertical-align: middle;
+  font-size: 2.5rem;
+}
+
+.table-wrapper{
+  width: 700px;
+  height: 310px;
+  margin: auto;
+  margin-bottom: 10px;
+  border-radius: 0 0 20px 20px;
+  background-color:#34354A;
+  box-shadow: 15px 15px 0px 0px rgba(0, 0, 0, .4);
+  color: #FFFDD0;
+  text-align: left;
+}
+
