@@ -1,0 +1,41 @@
+.card {
+    margin-top: 50px;
+}
+  
+header {
+    max-width: 50rem;
+    height: 100%;
+    margin: auto;
+    border-radius: 30px;
+    padding: 2rem;
+    background-color: #34354A;
+    box-shadow: 0 0 15px 15px rgba(0, 0, 0, .4);
+}
+  
+h1 {
+    width: 60rem;
+    color: #FFFDD0;
+    vertical-align: middle;
+    font-size: 4rem;
+    font-weight: bolder;
+    margin-top: 2vw;
+    margin-bottom: 0;
+    white-space: nowrap;
+}
+  
+.welcome-message {
+    color: #FFFFFF;
+    font-size: 20px;
+}
+
+.table-wrapper {
+    color: #FFFFFF;
+}
+  
+th, td {
+    padding: 20px; 
+}
+  
+h2 {
+    color: #FFFFFF; 
+}
