@@ -198,6 +198,7 @@ function editContact(contact) {
 
     document.getElementById("contact-form-title").textContent = "Edit Contact";
     document.getElementById("save-contact-button").textContent = "Update Contact";
+    document.getElementById("save-contact-button").style.width = "25%"
     document.getElementById("cancel-edit-button").style.display = "inline-block";
     document.getElementById("contact-status").textContent = "";
 }
@@ -236,6 +237,7 @@ function resetContactForm() {
     document.getElementById("contact-form-title").textContent = "Add Contact";
     document.getElementById("save-contact-button").textContent = "Add Contact";
     document.getElementById("cancel-edit-button").style.display = "none";
+    document.getElementById("save-contact-button").style.width = "20%"
 }
 
 function renderContacts(contacts) {
