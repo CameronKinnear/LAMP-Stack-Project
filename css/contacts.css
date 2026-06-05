@@ -97,11 +97,13 @@ button[type=button] {
 
 .status-message {
     color: #FFFFFF;
+    text-align: center;
 }
 
-.table-row {
+.tr {
     display: block;
     background-color: #FFFDD0;
+    color: #232232;
     margin: 1vw auto 1vw auto;
     width: 95%;
     height: 3rem;

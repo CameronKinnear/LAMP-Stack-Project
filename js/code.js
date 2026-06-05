@@ -253,6 +253,7 @@ function renderContacts(contacts) {
 
     contacts.forEach((contact) => {
         const row = document.createElement("tr");
+        row.className = 'table-row';
 
         const fullName = `${escapeHtml(contact.firstName)} ${escapeHtml(contact.lastName)}`.trim();
 
