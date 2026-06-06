@@ -85,6 +85,13 @@ async function handleRegister(event) {
     const lastName = document.getElementById("register-last-name").value.trim();
     const login = document.getElementById("register-username").value.trim();
     const password = document.getElementById("register-password").value;
+    const confirmPasswordInput = document.getElementById("confirmPass") || document.getElementById("register-confirm-password");
+
+    if (confirmPasswordInput && password !== confirmPasswordInput.value) {
+    	registerStatus.textContent = "Passwords do not match.";
+    	registerStatus.className = "status-message error";
+    	return;
+    }
 
     const response = await postJson(`${API_BASE}/register.php`, {
         firstName,
